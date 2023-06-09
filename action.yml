@@ -33,7 +33,7 @@ runs:
           vendor/bin/phpcs -s --standard=MinimalPluginStandard --ignore=wporg-code-analysis/* $path
         elif [ "${{ inputs.type }}" = "theme" ]; then
           echo "Running WP.org Code Analysis on a theme..."
-          vendor/bin/phpcs -s --standard=MinimalThemeStandard --ignore=wporg-code-analysis/* $path
+          vendor/bin/phpcs -s --standard=MinimalThemeStandard --ignore=wporg-code-analysis/*,*\/*.css $path
         else
           echo "Invalid type. Please use either 'plugin' or 'theme'."
         fi
