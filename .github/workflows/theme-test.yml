@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Download and test a theme
         run: |
-          svn co https://themes.svn.wordpress.org/twentytwentyone/1.8 ./twentytwentyone
+          svn co https://themes.svn.wordpress.org/twentytwentythree/1.1 ./twentytwentythree
       - uses: ./
         with:
           type: theme
