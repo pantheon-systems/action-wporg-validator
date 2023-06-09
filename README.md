@@ -3,9 +3,13 @@
 
 A GitHub Action that runs the [WP.org Code Analysis Tool](https://github.com/WordPress/wporg-code-analysis) on your plugin or theme.
 
-## Description
+## What's this do?
 
 The (experimental) WP.org Code Analysis Tool includes, at its core, a PHPCS ruleset that can be run on WordPress plugins or themes to validate whether the code should be accepted into the WordPress.org repository. However, the ruleset cannot simply be installed and added as a PHPCS standard because it was never built as a standalone standard. This GitHub Action installs the WP.org Code Analysis Tool and its dependencies, then simply runs the PHPCS checks with the appropriate ruleset on your plugin or theme.
+
+## Why should I use it?
+
+If you have a plugin or theme in the WordPress.org repository, you can add this to your build pipeline to validate your plugin or theme before cutting a release and deploying the update to WP.org. This can be used alongside and independent of any other PHPCS or code quality checks you may already have in place.
 
 ## Inputs
 
