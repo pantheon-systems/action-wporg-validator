@@ -1,0 +1,15 @@
+name: Plugin Test
+on:
+  push:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Plugin Test
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download and test a plugin
+        run: |
+          svn co https://plugins.svn.wordpress.org/akismet/trunk ./akismet
+      - uses: ./
+        with:
+          type: plugin

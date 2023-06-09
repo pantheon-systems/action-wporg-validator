@@ -1,0 +1,39 @@
+name: WP.org Plugin & Theme Validator
+description: Runs the WP.org Code Analysis Tool on your plugin or theme.
+author: pantheon-systms
+branding:
+  icon: eye
+  color: yellow
+inputs:
+  type:
+    description: The type of code to validate. Either "plugin" or "theme".
+    required: true
+    default: 'plugin'
+    type: string
+runs:
+  using: composite
+  steps:
+    - name: Checkout WP.org Code Analysis
+      uses: actions/checkout@v3
+      with:
+        repository: WordPress/wporg-code-analysis
+        ref: trunk
+        path: wporg-code-analysis
+    - name: WP.org Code Analysis
+      run: |
+        path=$(pwd)
+        echo "WP.org Code Analysis is installed to $(path)/wporg-code-analysis. cd'ing there..."
+        cd $(path)/wporg-code-analysis
+        echo "Setting up WP.org Code Analysis..."
+        composer install -n
+        # check if we're running a plugin or theme
+        if [ "${{ inputs.type }}" = "plugin" ]; then
+          echo "Running WP.org Code Analysis on a plugin..."
+          vendor/bin/phpcs -s --standard=MinimalPluginStandard --ignore=wporg-code-analysis/* $path
+        elif [ "${{ inputs.type }}" = "theme" ]; then
+          echo "Running WP.org Code Analysis on a theme..."
+            echo "Running WP.org Code Analysis on a plugin..."
+          vendor/bin/phpcs -s --standard=MinimalPluginStandard --ignore=wporg-code-analysis/* $path
+        else
+          echo "Invalid type. Please use either 'plugin' or 'theme'."
+        fi
