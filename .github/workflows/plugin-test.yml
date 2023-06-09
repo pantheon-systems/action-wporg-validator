@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Download and test a plugin
         run: |
-          svn co https://plugins.svn.wordpress.org/akismet/trunk ./akismet
+          svn co https://plugins.svn.wordpress.org/hello-dolly/trunk ./hello-dolly
       - uses: ./
         with:
           type: plugin
