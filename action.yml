@@ -24,7 +24,7 @@ runs:
       run: |
         path=$(pwd)
         echo "WP.org Code Analysis is installed to $(path)/wporg-code-analysis. cd'ing there..."
-        cd $(path)/wporg-code-analysis
+        cd ${path}/wporg-code-analysis
         echo "Setting up WP.org Code Analysis..."
         composer install -n
         # check if we're running a plugin or theme
