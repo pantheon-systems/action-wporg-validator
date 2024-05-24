@@ -1,5 +1,5 @@
 # WP.org Plugin/Theme Validator Action
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/pantheon-systems/action-wporg-validator/plugin-test.yml?label=plugin%20vulnerability%20scanner&logo=wordpress)](https://github.com/pantheon-systems/action-wporg-validator/actions) [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/pantheon-systems/action-wporg-validator/theme-test.yml?label=theme%20vulnerability%20scanner&logo=wordpress)](https://github.com/pantheon-systems/action-wporg-validator/actions) [![MIT License](https://img.shields.io/github/license/pantheon-systems/action-wporg-validator)](https://github.com/pantheon-systems/action-wporg-validator/blob/main/LICENSE) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/pantheon-systems/action-wporg-validator)](https://github.com/pantheon-systems/action-wporg-validator/releases)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/pantheon-systems/action-wporg-validator/plugin-test.yml?label=plugin%20validator&logo=wordpress)](https://github.com/pantheon-systems/action-wporg-validator/actions) [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/pantheon-systems/action-wporg-validator/theme-test.yml?label=theme%20validator&logo=wordpress)](https://github.com/pantheon-systems/action-wporg-validator/actions) [![MIT License](https://img.shields.io/github/license/pantheon-systems/action-wporg-validator)](https://github.com/pantheon-systems/action-wporg-validator/blob/main/LICENSE) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/pantheon-systems/action-wporg-validator)](https://github.com/pantheon-systems/action-wporg-validator/releases)
 
 A GitHub Action that runs the [WP.org Code Analysis Tool](https://github.com/WordPress/wporg-code-analysis) on your plugin or theme.
 
@@ -23,4 +23,20 @@ If you have a plugin or theme in the WordPress.org repository, you can add this 
 uses: pantheon-systems/action-wporg-validator@v1
 with:
   type: 'plugin'
+```
+
+## Badges
+
+If you want to show that you're using the tool in your README files, you can use the following markdown:
+
+### Plugins
+
+```md
+[![WP.org Plugin Validator](https://img.shields.io/github/actions/workflow/status/<your-github-user>/<your-plugin-repository>/<your-workflow>.yml?label=plugin%20validator&logo=wordpress)](https://github.com/<your-github-user>/<your-plugin-repository>/actions)
+```
+
+### Themes
+
+```md
+[![WP.org Theme Validator](https://img.shields.io/github/actions/workflow/status/<your-github-user>/<your-theme-repository>/<your-workflow>.yml?label=theme%20validator&logo=wordpress)](https://github.com/<your-github-user>/<your-plugin-repository>/actions)
 ```
