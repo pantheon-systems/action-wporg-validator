@@ -20,7 +20,7 @@ If you have a plugin or theme in the WordPress.org repository, you can add this 
 ## Example usage
 
 ```yaml
-uses: pantheon-systems/action-wporg-validator@1.0.0
+uses: pantheon-systems/action-wporg-validator@v1
 with:
   type: 'plugin'
 ```
