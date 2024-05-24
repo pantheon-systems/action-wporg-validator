@@ -24,3 +24,19 @@ uses: pantheon-systems/action-wporg-validator@v1
 with:
   type: 'plugin'
 ```
+
+## Badges
+
+If you want to show that you're using the tool in your README files, you can use the following markdown:
+
+### Plugins
+
+```md
+[![WP.org Plugin Validator](https://img.shields.io/github/actions/workflow/status/<your-github-user>/<your-plugin-repository>/<your-workflow>.yml?label=plugin%20validator&logo=wordpress)](https://github.com/<your-github-user>/<your-plugin-repository>/actions)
+```
+
+### Themes
+
+```md
+[![WP.org Theme Validator](https://img.shields.io/github/actions/workflow/status/<your-github-user>/<your-theme-repository>/<your-workflow>.yml?label=theme%20validator&logo=wordpress)](https://github.com/<your-github-user>/<your-plugin-repository>/actions)
+```
