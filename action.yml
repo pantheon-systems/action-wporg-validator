@@ -30,7 +30,7 @@ runs:
         # check if we're running a plugin or theme
         if [ "${{ inputs.type }}" = "plugin" ]; then
           echo "Running WP.org Code Analysis on a plugin..."
-          vendor/bin/phpcs -s --standard=MinimalPluginStandard --ignore=wporg-code-analysis/* $path
+          vendor/bin/phpcs -s --standard=MinimalPluginStandard --ignore=wporg-code-analysis/*,*\/*.css $path
         elif [ "${{ inputs.type }}" = "theme" ]; then
           echo "Running WP.org Code Analysis on a theme..."
           vendor/bin/phpcs -s --standard=MinimalThemeStandard --ignore=wporg-code-analysis/*,*\/*.css $path
