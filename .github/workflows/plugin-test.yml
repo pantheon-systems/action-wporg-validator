@@ -6,10 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Plugin Test
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Download and test a plugin
         run: |
-          svn co https://plugins.svn.wordpress.org/progress-bar/trunk ./progress-bar
+          git svn clone https://plugins.svn.wordpress.org/progress-bar/trunk ./progress-bar
       - uses: ./
         with:
           type: plugin
