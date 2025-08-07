@@ -6,34 +6,12 @@ branding:
   color: yellow
 inputs:
   type:
-    description: The type of code to validate. Either "plugin" or "theme".
-    required: true
+    description: The type of code to validate. Either "plugin" or "theme" (deprecated, only "plugin" is supported).
+    required: false
     default: 'plugin'
     type: string
 runs:
   using: composite
   steps:
-    - name: Checkout WP.org Code Analysis
-      uses: actions/checkout@v3
-      with:
-        repository: WordPress/wporg-code-analysis
-        ref: trunk
-        path: wporg-code-analysis
-    - name: WP.org Code Analysis
-      shell: bash
-      run: |
-        path=$(pwd)
-        echo "WP.org Code Analysis is installed to $(path)/wporg-code-analysis. cd'ing there..."
-        cd ${path}/wporg-code-analysis
-        echo "Setting up WP.org Code Analysis..."
-        composer install -n
-        # check if we're running a plugin or theme
-        if [ "${{ inputs.type }}" = "plugin" ]; then
-          echo "Running WP.org Code Analysis on a plugin..."
-          vendor/bin/phpcs -s --standard=MinimalPluginStandard --ignore=wporg-code-analysis/*,*\/*.css $path
-        elif [ "${{ inputs.type }}" = "theme" ]; then
-          echo "Running WP.org Code Analysis on a theme..."
-          vendor/bin/phpcs -s --standard=MinimalThemeStandard --ignore=wporg-code-analysis/*,*\/*.css $path
-        else
-          echo "Invalid type. Please use either 'plugin' or 'theme'."
-        fi
+    - name: Run WordPress Plugin Check
+      uses: wordpress/plugin-check-action@v1.1.2
