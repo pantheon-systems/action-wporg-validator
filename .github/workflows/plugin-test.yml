@@ -7,9 +7,11 @@ jobs:
     name: Plugin Test
     steps:
       - uses: actions/checkout@v4
+      - name: Install subversion
+        run: sudo apt-get update && sudo apt-get install -y subversion
       - name: Download and test a plugin
         run: |
-          git svn clone https://plugins.svn.wordpress.org/progress-bar/trunk ./progress-bar
+          svn co https://plugins.svn.wordpress.org/progress-bar/trunk ./progress-bar
       - uses: ./
         with:
           type: plugin
