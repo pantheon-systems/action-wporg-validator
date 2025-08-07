@@ -10,8 +10,15 @@ inputs:
     required: false
     default: 'plugin'
     type: string
+  path:
+    description: 'The path to the plugin to check.'
+    required: false
+    default: './'
+    type: string
 runs:
   using: composite
   steps:
     - name: Run WordPress Plugin Check
       uses: wordpress/plugin-check-action@v1.1.2
+      with:
+        build-dir: ${{ inputs.path }}
