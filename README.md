@@ -7,6 +7,9 @@ A GitHub Action that runs the [WP.org Code Analysis Tool](https://github.com/Wor
 ## For informational purposes only
 This GitHub Action is deprecated and will not receive updates. It is provided for informational purposes only. Since this action was created, a new [WordPress Plugin Check Action](https://github.com/wordpress/plugin-check-action) has been created by the WordPress.org team, which is a more robust and maintained solution for validating plugins against the WordPress.org repository standards.
 
+### Switching to the WordPress Plugin Check Action
+If you are currently using this action, we recommend switching to the [WordPress Plugin Check Action](https://github.com/wordpress/plugin-check-action). Switching should be an easy, drop-in replacement, as the Plugin Check Action runs in the current directory by default. For more information on how to use the WordPress Plugin Check Action, see the Plugin Check Action README.
+
 ## What's this do?
 
 The (experimental) WP.org Code Analysis Tool includes, at its core, a PHPCS ruleset that can be run on WordPress plugins or themes to validate whether the code should be accepted into the WordPress.org repository. However, the ruleset cannot simply be installed and added as a PHPCS standard because it was never built as a standalone standard. This GitHub Action installs the WP.org Code Analysis Tool and its dependencies, then simply runs the PHPCS checks with the appropriate ruleset on your plugin or theme.
