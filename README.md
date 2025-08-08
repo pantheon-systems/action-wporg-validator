@@ -1,7 +1,14 @@
-# WP.org Plugin/Theme Validator Action
+# WP.org Plugin/Theme Validator Action (Deprecated)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/pantheon-systems/action-wporg-validator/plugin-test.yml?label=plugin%20validator&logo=wordpress)](https://github.com/pantheon-systems/action-wporg-validator/actions) [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/pantheon-systems/action-wporg-validator/theme-test.yml?label=theme%20validator&logo=wordpress)](https://github.com/pantheon-systems/action-wporg-validator/actions) [![MIT License](https://img.shields.io/github/license/pantheon-systems/action-wporg-validator)](https://github.com/pantheon-systems/action-wporg-validator/blob/main/LICENSE) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/pantheon-systems/action-wporg-validator)](https://github.com/pantheon-systems/action-wporg-validator/releases)
+[![Deprecated](https://img.shields.io/badge/Pantheon-Deprecated-yellow?logo=pantheon&color=FFDC28)](https://docs.pantheon.io/oss-support-levels#deprecated)
 
 A GitHub Action that runs the [WP.org Code Analysis Tool](https://github.com/WordPress/wporg-code-analysis) on your plugin or theme.
+
+## For informational purposes only
+This GitHub Action is deprecated and will not receive updates. It is provided for informational purposes only. Since this action was created, a new [WordPress Plugin Check Action](https://github.com/wordpress/plugin-check-action) has been created by the WordPress.org team, which is a more robust and maintained solution for validating plugins against the WordPress.org repository standards.
+
+### Switching to the WordPress Plugin Check Action
+If you are currently using this action, we recommend switching to the [WordPress Plugin Check Action](https://github.com/wordpress/plugin-check-action). Switching should be an easy, drop-in replacement, as the Plugin Check Action runs in the current directory by default. For more information on how to use the WordPress Plugin Check Action, see the Plugin Check Action README.
 
 ## What's this do?
 
